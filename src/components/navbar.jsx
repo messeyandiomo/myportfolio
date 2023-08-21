@@ -1,0 +1,130 @@
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
+library.add(faGithub, faLinkedin);
+
+class NavBar extends Component {
+  state = {
+    pages: [
+      { id: 0, classes: "nav-link" },
+      { id: 1, classes: "nav-link" },
+      { id: 2, classes: "nav-link" },
+    ],
+    navExpanded: false,
+  };
+
+  setNavExpanded = (expanded) => {
+    this.setState({ navExpanded: expanded });
+  };
+
+  closeNav = () => {
+    this.setState({ navExpanded: false });
+  };
+
+  setActive = (linkId) => {
+    const pages = this.state.pages.map((page) => {
+      page.id === linkId
+        ? (page.classes = "nav-link active")
+        : (page.classes = "nav-link");
+      return page;
+    });
+    this.setState({ pages });
+  };
+
+  getNavLinkClasses = (linkId) => {
+    return this.state.pages.filter((page) => page.id === linkId)[0].classes;
+  };
+
+  render() {
+    return (
+      <Navbar
+        expand="md"
+        className="navbar-dark fixed-top bg-dark"
+        expanded={this.state.navExpanded}
+        onToggle={this.setNavExpanded}
+      >
+        <Container fluid>
+          <Navbar.Brand href="#">MESSEY à NDIOMO</Navbar.Brand>
+          <Navbar.Toggle
+            aria-controls="navbarScroll"
+            className="shadow-none"
+            id="navbarToggle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-three-dots"
+              viewBox="0 0 16 16"
+            >
+              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+            </svg>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="ms-auto my-2 my-lg-0"
+              style={{ "--bs-scroll-height": 100 }}
+              navbarScroll
+              onSelect={this.closeNav}
+            >
+              <Nav.Link
+                href="#action1"
+                className={this.getNavLinkClasses(0)}
+                aria-current="page"
+                onClick={() => {
+                  this.props.onPage(0);
+                  this.setActive(0);
+                }}
+              >
+                ABOUT
+              </Nav.Link>
+              <Nav.Link
+                href="#action2"
+                className={this.getNavLinkClasses(1)}
+                onClick={() => {
+                  this.props.onPage(1);
+                  this.setActive(1);
+                }}
+              >
+                WORK
+              </Nav.Link>
+              <Nav.Link
+                href="#action3"
+                className={this.getNavLinkClasses(2)}
+                onClick={() => {
+                  this.props.onPage(2);
+                  this.setActive(2);
+                }}
+              >
+                CONTACT
+              </Nav.Link>
+              <Nav.Link
+                className="nav-link"
+                href="https://github.com/messey-bilal"
+              >
+                <FontAwesomeIcon icon={["fab", "fa-github"]} />
+              </Nav.Link>
+              <Nav.Link
+                className="nav-link"
+                href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit"
+              >
+                <FontAwesomeIcon icon={["fab", "fa-linkedin"]} />
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+}
+
+export default NavBar;

@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-link {
+  text-align: right;
+}
+
+#navbarToggle {
+  border-style: none;
+}
+
+@media all and (max-width: 1000px) and (min-width: 320px) {
+  .marge-y {
+    margin-top: 170px;
+  }
+}
