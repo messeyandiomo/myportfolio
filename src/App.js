@@ -22,7 +22,7 @@ class App extends Component {
         " container-fluid  d-flex align-items-center mt-sm-5 bg-dark text-white";
     } else if (this.state.link === 1) {
       classes +=
-        " container-fluid  d-flex align-items-center marge-y justify-content-center";
+        " container-fluid  d-flex align-items-center  justify-content-center";
     } else if (this.state.link === 2) {
       classes +=
         " container-fluid  d-flex align-items-center mt-sm-5 bg-dark text-white";
@@ -42,7 +42,14 @@ class App extends Component {
     return page;
   }
 
+  refresh = () => {
+    if (this.state.link === -1) {
+      window.location.reload(true);
+    }
+  };
+
   render() {
+    window.addEventListener("resize", this.refresh);
     return (
       <React.Fragment>
         <NavBar onPage={this.handlePageLink} />
