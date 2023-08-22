@@ -4,10 +4,11 @@ import NavBar from "./components/navbar";
 import About from "./components/about";
 import Work from "./components/work";
 import Contact from "./components/contact";
+import Reception from "./components/reception";
 
 class App extends Component {
   state = {
-    link: 0,
+    link: -1,
   };
 
   handlePageLink = (linkNum) => {
@@ -15,19 +16,22 @@ class App extends Component {
   };
 
   getClasses() {
-    let classes = "container-fluid vh-100 d-flex align-items-center mt-md-0";
+    let classes = "vh-100 mt-md-0";
     if (this.state.link === 0) {
-      classes += " mt-sm-5 bg-dark text-white";
+      classes +=
+        " container-fluid  d-flex align-items-center mt-sm-5 bg-dark text-white";
     } else if (this.state.link === 1) {
-      classes += " marge-y justify-content-center";
+      classes +=
+        " container-fluid  d-flex align-items-center marge-y justify-content-center";
     } else if (this.state.link === 2) {
-      classes += " mt-sm-5 bg-dark text-white";
+      classes +=
+        " container-fluid  d-flex align-items-center mt-sm-5 bg-dark text-white";
     }
     return classes;
   }
 
   getPage() {
-    let page = <About />;
+    let page = <Reception />;
     if (this.state.link === 0) {
       page = <About />;
     } else if (this.state.link === 1) {
