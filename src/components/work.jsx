@@ -5,16 +5,17 @@ class Work extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-6 ms-md-5">
-          <div className="shadow">
-            <img
-              src={require("../imgs/freelance-web-developer.png")}
-              className="img-fluid rounded"
-              alt=""
-              width="100%"
-              height="auto"
-            />
-          </div>
+        <div className="col-md-6 ms-md-5 d-flex justify-content-center">
+          <img
+            src={require("../imgs/freelance-web-developer.png")}
+            srcSet={`
+                ${require("../imgs/freelance-web-developer-sm.png")} 768w,
+                ${require("../imgs/freelance-web-developer.png")} 1280w
+              `}
+            sizes="(max-width: 768px) 768px, 1280px"
+            className="img-fluid rounded shadow"
+            alt=""
+          />
         </div>
         <div className="col-md-5 ms-md-5 d-flex align-items-center">
           <div className="row mt-4 mt-md-0">
