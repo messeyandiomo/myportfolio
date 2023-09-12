@@ -23,7 +23,7 @@ class NavBar extends Component {
 
   getActive(linkId) {
     let response = "";
-    if (this.props.activeLink === linkId) {
+    if (this.props.onActiveLink === linkId) {
       response = " active";
     }
 
@@ -38,40 +38,9 @@ class NavBar extends Component {
     this.setState({ navExpanded: false });
   };
 
-  setActive = (linkId) => {
-    const pages = this.state.pages.map((page) => {
-      page.id === linkId
-        ? (page.classes = "nav-link active")
-        : (page.classes = "nav-link");
-      return page;
-    });
-    this.setState({ pages });
-  };
-
   getNavLinkClasses = (linkId) => {
     return this.state.pages.filter((page) => page.id === linkId)[0].classes;
   };
-  /*
-  setHref() {
-    let response = "";
-    let href = window.location.hostname;
-    let port = window.location.port;
-    if (port.length === 0) {
-      href += ":" + port;
-    }
-    href += "/";
-    if (this.props.activeLink === 0) {
-      response = "about";
-    } else if (this.props.activeLink === 1) {
-      response = "work";
-    } else if (this.props.activeLink === 2) {
-      response = "contact";
-    }
-    href += response;
-
-    return response;
-  }
-  */
 
   render() {
     return (
@@ -107,34 +76,16 @@ class NavBar extends Component {
               onSelect={this.closeNav}
             >
               <Nav.Link
-                href="#about"
+                href="about"
                 className={this.getNavLinkClasses(0)}
                 aria-current="page"
-                onClick={() => {
-                  this.props.onPage(0);
-                  this.setActive(0);
-                }}
               >
                 ABOUT
               </Nav.Link>
-              <Nav.Link
-                href="#work"
-                className={this.getNavLinkClasses(1)}
-                onClick={() => {
-                  this.props.onPage(1);
-                  this.setActive(1);
-                }}
-              >
+              <Nav.Link href="work" className={this.getNavLinkClasses(1)}>
                 WORK
               </Nav.Link>
-              <Nav.Link
-                href="#contact"
-                className={this.getNavLinkClasses(2)}
-                onClick={() => {
-                  this.props.onPage(2);
-                  this.setActive(2);
-                }}
-              >
+              <Nav.Link href="contact" className={this.getNavLinkClasses(2)}>
                 CONTACT
               </Nav.Link>
               <Nav.Link

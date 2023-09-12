@@ -27,10 +27,6 @@ class App extends Component {
     return response;
   }
 
-  handlePageLink = (linkNum) => {
-    this.setState({ link: linkNum });
-  };
-
   getClasses() {
     let classes = "vh-100 mt-md-0";
     if (this.state.link === 0) {
@@ -70,7 +66,7 @@ class App extends Component {
     window.addEventListener("resize", this.refresh);
     return (
       <React.Fragment>
-        <NavBar onPage={this.handlePageLink} activeLink={this.state.link} />
+        <NavBar onActiveLink={this.state.link} />
         <main className={this.getClasses()}>{this.getPage()}</main>
       </React.Fragment>
     );
