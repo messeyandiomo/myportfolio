@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 //const sendMail = require("../smtp/sendMail");
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [fillName, setFillName] = useState(false);
+  const [goodEmail, setGoodEmail] = useState(false);
+  const [fillMessage, setFillMessage] = useState(false);
+  const buttonSubmit = useRef();
+
+  useEffect(() => {
+    if (fillName && goodEmail && fillMessage) {
+      buttonSubmit.current.className = "btn btn-light active";
+    } else {
+      buttonSubmit.current.className = "btn btn-light disabled";
+    }
+  });
 
   const requestBody = {
     name: "",
@@ -88,7 +100,11 @@ function Contact() {
                   className="form-control bg-dark text-white"
                   id="idInputName"
                   name="user_name"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => {
+                    const val = e.target.value.trim();
+                    setName(val);
+                    val.length !== 0 ? setFillName(true) : setFillName(false);
+                  }}
                 />
               </div>
               <div>
@@ -101,7 +117,13 @@ function Contact() {
                   id="idInputEmail"
                   aria-describedby="emailHelp"
                   name="user_email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    const val = e.target.value.trim();
+                    setEmail(val);
+                    /\S+@\S+\.\S+/.test(val)
+                      ? setGoodEmail(true)
+                      : setGoodEmail(false);
+                  }}
                 />
                 <div id="idEmailHelp" className="form-text">
                   We'll never share your email with anyone else.
@@ -116,10 +138,20 @@ function Contact() {
                   id="idFormControlTextarea"
                   rows="3"
                   name="message"
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => {
+                    const val = e.target.value.trim();
+                    setMessage(val);
+                    val.length !== 0
+                      ? setFillMessage(true)
+                      : setFillMessage(false);
+                  }}
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-light">
+              <button
+                type="submit"
+                className="btn btn-light disabled"
+                ref={buttonSubmit}
+              >
                 HIT ME UP
                 <span> </span>
                 <svg

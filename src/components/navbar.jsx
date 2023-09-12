@@ -14,12 +14,21 @@ library.add(faGithub, faLinkedin);
 class NavBar extends Component {
   state = {
     pages: [
-      { id: 0, classes: "nav-link" },
-      { id: 1, classes: "nav-link" },
-      { id: 2, classes: "nav-link" },
+      { id: 0, classes: "nav-link" + this.getActive(0) },
+      { id: 1, classes: "nav-link" + this.getActive(1) },
+      { id: 2, classes: "nav-link" + this.getActive(2) },
     ],
     navExpanded: false,
   };
+
+  getActive(linkId) {
+    let response = "";
+    if (this.props.activeLink === linkId) {
+      response = " active";
+    }
+
+    return response;
+  }
 
   setNavExpanded = (expanded) => {
     this.setState({ navExpanded: expanded });
@@ -42,6 +51,27 @@ class NavBar extends Component {
   getNavLinkClasses = (linkId) => {
     return this.state.pages.filter((page) => page.id === linkId)[0].classes;
   };
+  /*
+  setHref() {
+    let response = "";
+    let href = window.location.hostname;
+    let port = window.location.port;
+    if (port.length === 0) {
+      href += ":" + port;
+    }
+    href += "/";
+    if (this.props.activeLink === 0) {
+      response = "about";
+    } else if (this.props.activeLink === 1) {
+      response = "work";
+    } else if (this.props.activeLink === 2) {
+      response = "contact";
+    }
+    href += response;
+
+    return response;
+  }
+  */
 
   render() {
     return (

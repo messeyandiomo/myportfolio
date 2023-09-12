@@ -8,8 +8,24 @@ import Reception from "./components/reception";
 
 class App extends Component {
   state = {
-    link: -1,
+    link: this.getLink(),
   };
+
+  getLink() {
+    let pageName = window.location.pathname.substring(
+      window.location.pathname.lastIndexOf("/") + 1
+    );
+    let response = -1;
+    if (pageName.match("about")) {
+      response = 0;
+    } else if (pageName.match("work")) {
+      response = 1;
+    } else if (pageName.match("contact")) {
+      response = 2;
+    }
+
+    return response;
+  }
 
   handlePageLink = (linkNum) => {
     this.setState({ link: linkNum });
@@ -32,6 +48,7 @@ class App extends Component {
 
   getPage() {
     let page = <Reception />;
+
     if (this.state.link === 0) {
       page = <About />;
     } else if (this.state.link === 1) {
@@ -39,6 +56,7 @@ class App extends Component {
     } else if (this.state.link === 2) {
       page = <Contact />;
     }
+
     return page;
   }
 
@@ -52,7 +70,7 @@ class App extends Component {
     window.addEventListener("resize", this.refresh);
     return (
       <React.Fragment>
-        <NavBar onPage={this.handlePageLink} />
+        <NavBar onPage={this.handlePageLink} activeLink={this.state.link} />
         <main className={this.getClasses()}>{this.getPage()}</main>
       </React.Fragment>
     );
