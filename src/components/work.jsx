@@ -5,19 +5,19 @@ class Work extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-6 ms-md-5 d-flex justify-content-center">
+        <div className="col-sm-8 offset-sm-2 col-md-5 offset-md-1 d-flex justify-content-center">
           <img
             src={require("../imgs/freelance-web-developer.png")}
             srcSet={`
-                ${require("../imgs/freelance-web-developer-sm.png")} 768w,
-                ${require("../imgs/freelance-web-developer.png")} 1280w
+                ${require("../imgs/freelance-web-developer-sm.png")} 481w,
+                ${require("../imgs/freelance-web-developer.png")} 768w
               `}
-            sizes="(max-width: 768px) 768px, 1280px"
+            sizes="(max-width: 481px) 481px, 768px"
             className="img-fluid rounded shadow"
             alt=""
           />
         </div>
-        <div className="col-md-5 ms-md-5 d-flex align-items-center">
+        <div className="col-md-5 offset-md-1 d-flex align-items-center">
           <div className="row mt-4 mt-md-0">
             <div className="row mb-md-4">
               <h1 className="text-center text-md-start">WORK</h1>

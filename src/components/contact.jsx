@@ -30,15 +30,6 @@ function Contact() {
     requestBody.name = name;
     requestBody.from = email;
     requestBody.message = message;
-    /*
-    sendMail(
-      requestBody.name,
-      "messey.bilal@gmail.com",
-      requestBody.from,
-      requestBody.subject,
-      requestBody.message
-    );
-    */
 
     try {
       const response = await fetch("127.0.0.1:3001/api/sendmail", {
@@ -57,7 +48,7 @@ function Contact() {
   };
 
   return (
-    <div className="row">
+    <div className="row mt-sm-5 mt-md-0">
       <div className="d-md-inline-flex justify-content-center">
         <div className="col-sm-12 col-md-5 d-md-flex align-items-center">
           <div className="row">
@@ -107,7 +98,7 @@ function Contact() {
                   }}
                 />
               </div>
-              <div>
+              <div className="mb-1">
                 <label htmlFor="idInputEmail" className="form-label">
                   Email address
                 </label>
@@ -125,9 +116,6 @@ function Contact() {
                       : setGoodEmail(false);
                   }}
                 />
-                <div id="idEmailHelp" className="form-text">
-                  We'll never share your email with anyone else.
-                </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="idFormControlTextarea" className="form-label">

@@ -31,13 +31,13 @@ class App extends Component {
     let classes = "vh-100 mt-md-0";
     if (this.state.link === 0) {
       classes +=
-        " container-fluid  d-flex align-items-center bg-dark text-white";
+        " container-fluid wrapper d-flex align-items-center bg-dark text-white";
     } else if (this.state.link === 1) {
       classes +=
-        " container-fluid  d-flex align-items-center justify-content-center";
+        " container-fluid wrapper d-flex align-items-center justify-content-center";
     } else if (this.state.link === 2) {
       classes +=
-        " container-fluid  d-flex align-items-center bg-dark text-white";
+        " container-fluid wrapper d-flex align-items-center bg-dark text-white";
     }
     return classes;
   }
