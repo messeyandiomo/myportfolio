@@ -2,6 +2,7 @@
   "name": "myportfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://messeyandiomo.github.io",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
@@ -26,6 +27,7 @@
     "emailjs": "^4.0.2",
     "emailjs-com": "^3.2.0",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.0.0",
     "http": "^0.0.1-security",
     "https-browserify": "^1.0.0",
     "net": "^1.0.2",
@@ -48,6 +50,8 @@
     "zlib": "^1.0.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
