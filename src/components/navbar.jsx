@@ -90,7 +90,7 @@ class NavBar extends Component {
               </Nav.Link>
               <Nav.Link
                 className="nav-link"
-                href="https://github.com/messey-bilal"
+                href="https://github.com/messeyandiomo"
               >
                 <FontAwesomeIcon icon={["fab", "fa-github"]} />
               </Nav.Link>
