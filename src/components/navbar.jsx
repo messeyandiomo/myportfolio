@@ -76,16 +76,16 @@ class NavBar extends Component {
               onSelect={this.closeNav}
             >
               <Nav.Link
-                href="about"
+                href={"about"}
                 className={this.getNavLinkClasses(0)}
                 aria-current="page"
               >
                 ABOUT
               </Nav.Link>
-              <Nav.Link href="work" className={this.getNavLinkClasses(1)}>
+              <Nav.Link href={"work"} className={this.getNavLinkClasses(1)}>
                 WORK
               </Nav.Link>
-              <Nav.Link href="contact" className={this.getNavLinkClasses(2)}>
+              <Nav.Link href={"contact"} className={this.getNavLinkClasses(2)}>
                 CONTACT
               </Nav.Link>
               <Nav.Link
