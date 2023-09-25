@@ -1,12 +1,19 @@
 require("dotenv").config({ path: __dirname + "./.env", override: true });
 const express = require("express");
 const bodyParser = require("body-parser");
-const sendMail = require("smtp/sendMail.js");
+const cors = require("cors");
+const sendMail = require("./sendMail");
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  })
+);
 
 app.post("/api/sendmail", async (req, res) => {
   const { name, from, subject, message } = req.body;

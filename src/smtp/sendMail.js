@@ -1,9 +1,9 @@
-import { createTransport } from "nodemailer";
-import { appendFile } from "../fs";
+const nodemailer = require("nodemailer");
+const fs = require("fs");
 
 const logToFile = (message) => {
   const logMessage = `[${new Date().toISOString()}] ${message}\n`;
-  appendFile("sendMail.log", logMessage, (err) => {
+  fs.appendFile("sendMail.log", logMessage, (err) => {
     if (err) {
       console.error("Error writing to log file:", err);
     }
@@ -13,12 +13,12 @@ const logToFile = (message) => {
 const sendMail = async (name, to, from, subject, message) => {
   logToFile("Sending email..., in the sendMail.js file");
   try {
-    let transporter = createTransport({
+    let transporter = nodemailer.createTransport({
       service: "gmail",
       host: "smtp.google.com",
       secure: false,
       port: 25,
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+      auth: { user: "messey.bilal@gmail.com", pass: "yonesandra" },
       tls: { rejectUnauthorized: false },
     });
     const mailOptions = {

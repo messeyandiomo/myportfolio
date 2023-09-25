@@ -1,0 +1,15 @@
+[2023-09-25T03:28:34.525Z] Sending email..., in the sendMail.js file
+[2023-09-25T03:28:35.393Z] Error sending email: Error: Missing credentials for "PLAIN"
+[2023-09-25T03:48:11.470Z] Sending email..., in the sendMail.js file
+[2023-09-25T03:48:12.193Z] Error sending email: Error: Missing credentials for "PLAIN"
+[2023-09-25T05:39:33.148Z] Sending email..., in the sendMail.js file
+[2023-09-25T05:39:34.281Z] Error sending email: Error: Missing credentials for "PLAIN"
+[2023-09-25T05:43:31.266Z] Sending email..., in the sendMail.js file
+[2023-09-25T05:43:32.427Z] Error sending email: Error: Invalid login: 534-5.7.9 Application-specific password required. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor a3-20020a5d4d43000000b003177074f830sm10922426wru.59 - gsmtp
+[2023-09-25T05:47:21.102Z] Sending email..., in the sendMail.js file
+[2023-09-25T05:47:22.003Z] Error sending email: Error: Invalid login: 534-5.7.9 Application-specific password required. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 8-20020a05600c230800b003fe61c33df5sm14119077wmo.3 - gsmtp
+[2023-09-25T05:54:35.187Z] Sending email..., in the sendMail.js file
+[2023-09-25T05:54:36.336Z] Error sending email: Error: Invalid login: 534-5.7.9 Application-specific password required. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor c22-20020a05600c171600b00405442edc69sm6993278wmn.14 - gsmtp

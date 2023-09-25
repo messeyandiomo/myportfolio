@@ -31,9 +31,11 @@ const Contact = () => {
     requestBody.message = message;
 
     try {
-      const response = await fetch("127.0.0.1:3001/api/sendmail", {
+      const response = await fetch("http://localhost:3001/api/sendmail", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(requestBody),
       });
       if (response.status === 200) {
