@@ -51,3 +51,7 @@
 .wrapper {
   min-height: 610px;
 }
+
+.homeLinkStyle {
+  text-decoration: none;
+}

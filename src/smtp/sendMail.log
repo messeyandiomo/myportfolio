@@ -13,3 +13,6 @@
 [2023-09-25T05:54:35.187Z] Sending email..., in the sendMail.js file
 [2023-09-25T05:54:36.336Z] Error sending email: Error: Invalid login: 534-5.7.9 Application-specific password required. Learn more at
 534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor c22-20020a05600c171600b00405442edc69sm6993278wmn.14 - gsmtp
+[2023-09-26T07:35:29.503Z] Sending email..., in the sendMail.js file
+[2023-09-26T07:35:30.754Z] Error sending email: Error: Invalid login: 534-5.7.9 Application-specific password required. Learn more at
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor j10-20020adfd20a000000b003142ea7a661sm7428339wrh.21 - gsmtp
