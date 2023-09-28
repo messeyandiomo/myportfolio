@@ -16,3 +16,29 @@
 [2023-09-26T07:35:29.503Z] Sending email..., in the sendMail.js file
 [2023-09-26T07:35:30.754Z] Error sending email: Error: Invalid login: 534-5.7.9 Application-specific password required. Learn more at
 534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor j10-20020adfd20a000000b003142ea7a661sm7428339wrh.21 - gsmtp
+[2023-09-28T05:10:33.472Z] Sending email..., in the sendMail.js file
+[2023-09-28T05:10:36.116Z] Email sent!
+[2023-09-28T05:29:22.215Z] Sending email..., in the sendMail.js file
+[2023-09-28T05:29:24.498Z] Email sent!
+[2023-09-28T05:53:22.756Z] Sending email..., in the sendMail.js file
+[2023-09-28T05:53:25.553Z] Email sent!
+[2023-09-28T05:54:32.274Z] Sending email..., in the sendMail.js file
+[2023-09-28T05:54:34.236Z] Email sent!
+[2023-09-28T06:33:27.416Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:33:30.020Z] Email sent!
+[2023-09-28T06:35:25.129Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:35:25.901Z] Error sending email: Error: Missing credentials for "PLAIN"
+[2023-09-28T06:37:33.846Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:37:34.584Z] Error sending email: Error: Missing credentials for "PLAIN"
+[2023-09-28T06:43:31.795Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:43:35.289Z] Email sent!
+[2023-09-28T06:45:31.443Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:45:33.593Z] Email sent!
+[2023-09-28T06:46:50.128Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:46:52.191Z] Email sent!
+[2023-09-28T06:47:44.658Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:47:47.055Z] Email sent!
+[2023-09-28T06:49:28.281Z] Sending email..., in the sendMail.js file
+[2023-09-28T06:49:30.562Z] Email sent!
+[2023-09-28T07:07:26.296Z] Sending email..., in the sendMail.js file
+[2023-09-28T07:07:29.576Z] Email sent!
