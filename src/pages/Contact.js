@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import ContactModal from "./ContactModal";
+import LoadingModal from "./LoadingModal";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -7,6 +9,9 @@ const Contact = () => {
   const [fillName, setFillName] = useState(false);
   const [goodEmail, setGoodEmail] = useState(false);
   const [fillMessage, setFillMessage] = useState(false);
+  const [showLoadingModal, setShowLoadingModal] = useState(false);
+  const [showMessageModal, setShowMessageModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
   const buttonSubmit = useRef();
 
   useEffect(() => {
@@ -30,6 +35,8 @@ const Contact = () => {
     requestBody.from = email;
     requestBody.message = message;
 
+    setShowLoadingModal(true);
+
     try {
       const response = await fetch("http://localhost:3001/api/sendmail", {
         method: "POST",
@@ -38,18 +45,27 @@ const Contact = () => {
         },
         body: JSON.stringify(requestBody),
       });
+      setShowLoadingModal(false);
       if (response.status === 200) {
         console.log("Email sent!. \nResponse:", response);
+        setModalMessage("Your Email has been sent !");
       } else {
         console.log("Email not sent. \nResponse:", response);
+        setModalMessage("Email not sent !\nResponse:" + response);
       }
     } catch (error) {
       console.error("Error sending email:", error);
+      setShowLoadingModal(false);
+      setModalMessage("Error sending email !\n" + error);
     }
+    setShowMessageModal(true);
+    //setTimeout(window.location.reload(), 10000);
   };
 
   return (
     <main className="vh-100 mt-md-0 container-fluid wrapper d-flex align-items-center bg-dark text-white">
+      {showLoadingModal && <LoadingModal />}
+      {showMessageModal && <ContactModal contactModalMessage={modalMessage} />}
       <div className="row mt-sm-5 mt-md-0">
         <div className="d-md-inline-flex justify-content-center">
           <div className="col-sm-12 col-md-5 d-md-flex align-items-center">
