@@ -10,10 +10,9 @@ import Home from "./pages/Home";
 
 class App extends Component {
   render() {
-    //window.addEventListener("resize", this.refresh);
     return (
       <React.Fragment>
-        <BrowserRouter>
+        <BrowserRouter basename="/myportfolio">
           <Routes>
             <Route path="/" element={<NavBar />}>
               <Route index element={<Home />} />
