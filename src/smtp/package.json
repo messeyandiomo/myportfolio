@@ -1,13 +1,16 @@
 {
-  "name": "smtp",
+  "name": "myportfolioserverside",
   "version": "1.0.0",
-  "description": "",
+  "description": "server side of myportfolio client app",
   "main": "sendMail.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Messey à Ndiomo Andre Ebenezer",
+  "license": "ISC",
+  "engines": {
+    "node": "18.17.0"
+  }
 }

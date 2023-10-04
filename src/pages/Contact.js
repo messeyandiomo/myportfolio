@@ -38,7 +38,7 @@ const Contact = () => {
     setShowLoadingModal(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/sendmail", {
+      const response = await fetch("/api/sendmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
