@@ -9,7 +9,7 @@ function ContactModal(props) {
     <Modal
       show={show}
       backdrop={"static"}
-      className="d-flex align-items-center"
+      className="d-flex align-items-center justify-content-center"
     >
       <Modal.Body
         className="text-center rounded"
